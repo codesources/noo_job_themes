@@ -135,33 +135,7 @@ switch ($action){
 			<div class="<?php noo_main_class(); ?>" role="main">
 				<div class="jform" id="jform">
 					<div class="jform-header">
-						<div class="container-boxed max">
-							<div class="jform-steps">
-								<ul class="jsteps jsteps-<?php echo count($steps); ?>">
-									<?php $count = 0; $is_previous = true; $is_current = false; $is_next = false; ?>
-									<?php foreach ($steps as $key => $step) : ?>
-										<?php
-										$count++;
-										$is_current = in_array( $action, $step['actions'] );
-										$is_previous = $is_previous && !$is_current;
-										$class = '';
-										$class .= ( $is_current ) ? ' active' : '';
-										$class .= ( $is_previous ) ? ' completed' : '';
-										$link = ( $is_previous && !empty( $step['link'] ) ) ? $step['link'] : 'javascript:void(0);';
-										?>
-										<li class="<?php echo $class; ?>">
-											<span class="jstep-num">
-												<a href="<?php echo $link; ?>"><?php echo $is_previous ? '<i class="fa fa-check"></i>' : $count;?></a>
-											</span>
-											<div class="jstep-line">
-												<span class="jstep-dot"></span>
-											</div>
-											<div class="jstep-label"><?php echo $step['title']; ?></div>
-										</li>
-									<?php endforeach; ?>
-								</ul>
-							</div>
-						</div>
+						 
 					</div>
 					<div class="jform-body">
 						<div class="container-boxed max">
