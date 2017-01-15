@@ -1,0 +1,313 @@
+body,
+p,
+span,
+a,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+input[placeholder],
+[placeholder],
+*[placeholder],
+input[type="text"],
+[type="text"],
+*[type="text"],
+[data-placeholder],
+li,
+ul,
+textarea,
+table,
+thead,
+tr,
+th {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+.navbar-nav li.menu-item-post-btn {
+  margin: 0 18px 0 0;
+}
+.nav-item-member-profile.login-link {
+  margin-right: 30px;
+  margin-left: 0;
+  padding-right: 30px;
+  padding-left: 0;
+}
+.nav-item-member-profile.login-link:before {
+  right: 0;
+}
+.nav-item-member-profile.login-link > a {
+  padding-left: 18px;
+  padding-right: 0;
+}
+.navbar-brand {
+  float: right;
+}
+.navbar-toggle {
+  float: left;
+}
+@media (min-width: 992px) {
+  .navbar-header {
+    float: right;
+  }
+}
+.tab-control-right .nav-tabs > li {
+  float: left;
+}
+.loop-item-wrap .item-featured,
+.loop-item-wrap .loop-item-content {
+  float: right !important;
+}
+.loop-item-wrap .show-view-more {
+  float: left;
+}
+.content-meta > span i {
+  padding-left: 5px;
+  padding-right: none;
+}
+.woocommerce-page .page-heading-info {
+  float: right;
+}
+.woocommerce #payment ul.payment_methods li {
+  text-align: right;
+}
+.woocommerce #payment #place_order {
+  float: left;
+}
+.woocommerce th {
+  float: right;
+}
+.form-group .control-label {
+  float: right;
+}
+.form-group .checkbox {
+  float: right;
+}
+@media (min-width: 768px) {
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    float: right;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    float: right;
+  }
+}
+.chosen-choices li.search-field {
+  float: right;
+  clear: both;
+}
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+  float: right;
+}
+table thead tr th {
+  text-align: right;
+}
+.pagination {
+  text-align: left;
+}
+.widget ul li a,
+.widget ol li a {
+  float: none;
+}
+.noo-job-type-widget ul li a,
+.noo-job-type-widget ol li a {
+  padding-right: 20px;
+}
+.noo-job-search-widget form:before,
+.noo-resume-search-widget form:before,
+.widget_search form:before {
+  right: auto;
+  left: 0;
+}
+.single-noo_job .page-heading-info,
+.single-noo_job .page-sub-heading-info {
+  float: right;
+  clear: both;
+}
+.single-noo_job .job-desc ul li:before,
+.single-noo_job .single-noo_job .more-jobs ul li:before {
+  margin-right: -20px;
+  margin-left: 0px;
+}
+.wysihtml5-toolbar {
+  float: right;
+}
+.resume-candidate-profile .candidate-title h2 {
+  float: right;
+}
+.resume .resume-content .resume-desc .resume-timeline .timeline-container .timeline-wrapper .timeline-time {
+  float: right;
+}
+.resume .resume-content .resume-desc .resume-timeline .timeline-container .timeline-wrapper .timeline-time:before {
+  right: -22px;
+  left: auto;
+}
+.resume .resume-content .resume-desc .resume-timeline .timeline-container .timeline-wrapper .timeline-series:before {
+  right: -25px;
+  left: auto;
+  border-width: 0 0px 27px 25px;
+}
+.resume .resume-content .resume-desc .resume-timeline .timeline-container .timeline-wrapper .timeline-series:after {
+  top: 41px;
+  right: -28px;
+  left: auto;
+  border-width: 0 2px 24px 26px;
+}
+.resume .resume-content .resume-desc .resume-general ul li span {
+  float: right;
+}
+.resume .skill .pregress-bar .progress_title {
+  float: right;
+}
+.resume .skill .pregress-bar .progress {
+  float: right;
+}
+.content-footer .author-bio .author-avatar {
+  float: right;
+}
+.content-footer .author-bio .author-info {
+  margin-left: auto;
+  margin-right: 100px;
+}
+.content-footer .author-bio .author-info .author-social > div {
+  float: right;
+}
+.content-share .noo-social a i {
+  float: right;
+}
+.form-control-flat {
+  text-align: right;
+}
+.form-control-flat .form-control-file-button {
+  right: auto;
+  left: 4px;
+  top: 41px;
+}
+.form-control-flat > .radio,
+.form-control-flat > .checkbox {
+  padding: 0 30px 0 0;
+}
+.form-control-flat > .radio i,
+.form-control-flat > .checkbox i {
+  right: 0;
+  left: auto;
+}
+.form-control-flat > .radio input,
+.form-control-flat > .checkbox input {
+  left: auto;
+  right: -9999px;
+}
+.jsteps li,
+.noo-step-icon li {
+  float: right;
+}
+.jsteps li:first-child .jstep-num:before,
+.noo-step-icon li:first-child .jstep-num:before,
+.jsteps li:first-child .noo-step-icon-item:before,
+.noo-step-icon li:first-child .noo-step-icon-item:before {
+  right: auto;
+  left: 0;
+}
+.jsteps li:last-child .jstep-num:before,
+.noo-step-icon li:last-child .jstep-num:before,
+.jsteps li:last-child .noo-step-icon-item:before,
+.noo-step-icon li:last-child .noo-step-icon-item:before {
+  right: 0;
+  left: auto;
+}
+.jsteps li .noo-step-icon-item:before,
+.noo-step-icon li .noo-step-icon-item:before {
+  left: auto;
+  right: 0;
+}
+.jsteps li .noo-step-icon-item:after,
+.noo-step-icon li .noo-step-icon-item:after {
+  right: auto;
+  left: 0;
+}
+.member-heading .member-heading-nav ul li {
+  float: right;
+}
+.member-manage .member-manage-table {
+  overflow: hidden;
+}
+/* Fix bug with Google authentication iFrame */
+#ssIFrame_google {
+  left: initial !important;
+  right: -9999px !important;
+}
+.noo-rtl .fa-long-arrow-right:before {
+  content: "\f177";
+}
+.noo-rtl .fa-long-arrow-left:before {
+  content: "\f178";
+}
+/**
+ * Fix slider
+ */
+.job-search-bg-slider ul.sliders {
+  right: 0px !important;
+  left: auto !important;
+}
+/**
+ * Style child item
+ */
+.widget ul li {
+  text-align: left;
+}
+.widget ul li a {
+  float: right;
+  text-align: right;
+  width: 85%;
+}
+.widget ul li ul.children {
+  padding: 0 25px 0 0;
+}
+.button_socical,
+.nav-item-member-profile .login-socical .button_socical {
+  text-align: right;
+}
+.button_socical i {
+  border-radius: 0 5px 5px 0;
+}
+.rtl .timeline-event > a:after {
+  left: 2.14285714em;
+  right: auto;
+}

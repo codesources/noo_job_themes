@@ -1,0 +1,245 @@
+.member-manage #fep-content {
+  border: none;
+}
+.member-manage #fep-content a {
+  color: #e6b706;
+  text-decoration: none;
+}
+.member-manage #fep-content a:hover {
+  border-bottom: dotted 1px #e6b706;
+}
+.member-manage #fep-content table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1.64285714em;
+  margin-bottom: 1.64285714em;
+  border: none;
+}
+.member-manage #fep-content table a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: dotted 1px #44494b;
+}
+.member-manage #fep-content table a:hover {
+  border-bottom: solid 1px #fff;
+}
+.member-manage #fep-content table tbody tr th,
+.member-manage #fep-content table tbody tr td {
+  padding: 0.57142857em;
+  line-height: 1.7;
+  vertical-align: top;
+  border: 1px solid #ccc;
+}
+body.rtl .member-manage #fep-content table tbody tr th,
+body.rtl .member-manage #fep-content table tbody tr td {
+  text-align: right;
+}
+.member-manage #fep-content table > tbody > tr.fep-head {
+  color: #000;
+  background-color: #fff;
+}
+.member-manage #fep-content table > tbody > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ccc;
+  padding-left: 1.07142857em;
+  padding-right: 1.07142857em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .member-manage #fep-content table > tbody > tr > th {
+    padding: 1.07142857em;
+  }
+}
+.member-manage #fep-content table tbody > tr > td {
+  vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .member-manage #fep-content table tbody > tr > td {
+    padding: 1.07142857em;
+  }
+}
+.member-manage #fep-content table tbody > tr > td em {
+  font-size: 0.9em;
+}
+.member-manage #fep-content table tbody > tr.fep-trodd1 {
+  background-color: #fff;
+}
+.member-manage #fep-content table tbody tr:not(.fep-head):hover {
+  background-color: #44494b;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.member-manage #fep-content table tbody tr:not(.fep-head):hover td {
+  color: #fff;
+}
+.member-manage #fep-content table tbody tr:not(.fep-head):hover td a:not(.btn-primary) {
+  color: #fff;
+}
+.member-manage #fep-content table tbody tr:not(.fep-head):hover td a:not(.btn-primary):hover {
+  color: inherit;
+}
+.member-manage #fep-content table tbody tr:not(.fep-head):hover td h3 {
+  color: #fff;
+}
+.member-manage #fep-content #wp-message_content-editor-container {
+  border: 1px solid #e3e3e3;
+}
+.member-manage #fep-content form input[type="text"] {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 0.42857143em 1.28571429em;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.member-manage #fep-content form input[type="text"]:focus {
+  border-color: #484848;
+  outline: 0;
+}
+.member-manage #fep-content form input[type="text"]::-moz-placeholder {
+  color: #c3c3c3;
+  opacity: 1;
+}
+.member-manage #fep-content form input[type="text"]:-ms-input-placeholder {
+  color: #c3c3c3;
+}
+.member-manage #fep-content form input[type="text"]::-webkit-input-placeholder {
+  color: #c3c3c3;
+}
+.member-manage #fep-content form input[type="text"][disabled],
+.member-manage #fep-content form input[type="text"][readonly],
+fieldset[disabled] .member-manage #fep-content form input[type="text"] {
+  cursor: not-allowed;
+  background-color: #dedede;
+  opacity: 1;
+}
+textarea.member-manage #fep-content form input[type="text"] {
+  height: auto;
+}
+.member-manage #fep-content form input[type="submit"] {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 0 solid transparent;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.71428571em 2.28571429em;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: border-color color 0.2s ease;
+  -o-transition: border-color color 0.2s ease;
+  transition: border-color color 0.2s ease;
+}
+.member-manage #fep-content form input[type="submit"]:focus,
+.member-manage #fep-content form input[type="submit"]:active:focus,
+.member-manage #fep-content form input[type="submit"].active:focus {
+  outline: none;
+}
+.member-manage #fep-content form input[type="submit"]:hover,
+.member-manage #fep-content form input[type="submit"]:focus {
+  color: #44494b;
+  text-decoration: none;
+}
+.member-manage #fep-content form input[type="submit"]:active,
+.member-manage #fep-content form input[type="submit"].active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.member-manage #fep-content form input[type="submit"].disabled,
+.member-manage #fep-content form input[type="submit"][disabled],
+fieldset[disabled] .member-manage #fep-content form input[type="submit"] {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.member-manage #fep-content form input[type="submit"].square {
+  border-radius: 0;
+}
+.member-manage #fep-content form input[type="submit"].pill {
+  border-radius: 100em;
+}
+.member-manage #fep-content form input[type="submit"].rounded {
+  border-radius: 0.225em;
+}
+.member-manage #fep-content form input[type="submit"].btn-white {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  -webkit-transition: all 0.2 ease;
+  -o-transition: all 0.2 ease;
+  transition: all 0.2 ease;
+}
+.member-manage #fep-content form input[type="submit"].btn-white:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  color: #57666e;
+}
+.member-manage #fep-content form input[type="submit"].btn-white:hover > i {
+  color: #57666e !important;
+}
+.member-manage #fep-content form input[type="submit"].btn-black {
+  background: none repeat scroll 0 0 #333333;
+  color: white;
+}
+.member-manage #fep-content form input[type="submit"].btn-black:hover {
+  background-color: #2b2b2b;
+}
+.member-manage #fep-content form input[type="submit"] i {
+  padding-right: 10px;
+}
+.member-manage #fep-content form input[type="submit"].icon-right i {
+  padding-left: 10px;
+  padding-right: 0px;
+}
+.member-manage #fep-content #fep-result {
+  border: dotted 1px #333;
+  background-color: #fff;
+  margin-top: -25px;
+  width: 400px;
+}
+.member-manage #fep-content #fep-result li {
+  border: none;
+}
+.member-manage #fep-content #fep-error,
+.member-manage #fep-content #fep-wp-error {
+  padding: 15px;
+  background: #f2dede;
+  color: #a94442;
+  border-color: #ebccd1;
+}
+.member-manage #fep-content #fep-success {
+  padding: 15px;
+  background: #dff0d8;
+  color: #3c763d;
+  border-color: #d6e9c6;
+}
+.candidate-message-action {
+  margin-top: 40px;
+}

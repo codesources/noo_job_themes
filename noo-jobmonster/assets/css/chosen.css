@@ -1,0 +1,12 @@
+/**
+ * 9.0 - Main file
+ * 	9.1 - main
+ */
+.form-group .chosen-container-single,
+.form-group .chosen-container-multi .chosen-choices {
+  background-image: none;
+  min-height: 50px;
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}

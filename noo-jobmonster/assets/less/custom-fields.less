@@ -1,0 +1,43 @@
+.cf-single_image-value .noo-lightbox-item,
+.cf-image_gallery-value .noo-lightbox-item {
+	display: inline-block;
+}
+
+.cf-image_gallery-value {
+	display: block;
+	.noo-lightbox-item {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	margin-left: -5px;
+}
+
+.cf-embed_video-value {
+	width: 100% !important;
+}
+
+.required-field {
+	> label:after {
+	    content: "*";
+	    margin: 0 5px;
+	}
+}
+
+ul.custom-fields {
+	list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+	    overflow: hidden;
+	    clear: both;
+	    span:first-child {
+	    	width: 40%;
+	    	float: left;
+	    	font-weight: bold;
+	    }
+    	span:nth-child(2) {
+    		width: 60%;
+    		float: left;
+    	}
+    }
+}

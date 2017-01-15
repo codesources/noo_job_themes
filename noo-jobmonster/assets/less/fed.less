@@ -1,0 +1,145 @@
+@import "variables.less";
+@import "mixins.less";
+
+.member-manage{
+	#fep-content {
+		border: none;
+		a {
+			color: @brand-primary;
+			text-decoration: none;
+			&:hover {
+				border-bottom: dotted 1px @brand-primary;
+			}
+		}
+		table {
+			width: 100%;
+			max-width: 100%;
+			margin-top: @line-height-computed;
+			margin-bottom: @line-height-computed;
+			border: none;
+			a {
+				color: inherit;
+				text-decoration: none;
+				border-bottom: dotted 1px @text-color;
+				&:hover {
+					border-bottom: solid 1px #fff;
+				}
+			}
+			// Cells
+			tbody {
+				tr {
+					th,
+					td {
+						padding: @table-cell-padding;
+						line-height: @line-height-base;
+						vertical-align: top;
+						// border: none;
+						border: 1px solid @table-border-color;
+						body.rtl & {
+							text-align: right;
+						}
+					}
+				}
+			}
+			// Bottom align for column headings
+			> tbody > tr {
+				&.fep-head {
+					color: #000;
+					background-color: @body-bg;
+				}
+				> th {
+					vertical-align: bottom;
+					border-bottom: 2px solid @table-border-color;
+					padding-left: (@grid-gutter-width / 2);
+					padding-right: (@grid-gutter-width / 2);
+					@media (max-width: @screen-xs-max) {
+						padding: (@grid-gutter-width / 2);
+					}
+					text-transform: uppercase;
+					vertical-align: middle;
+					background-color: @body-bg;
+				}
+			}
+
+			tbody{
+				> tr {
+					> td{
+						// padding: @grid-gutter-width (@grid-gutter-width / 2);
+						vertical-align: middle;
+						@media (max-width: @screen-xs-max) {
+							padding: (@grid-gutter-width / 2);
+						}
+						em{
+							font-size: 0.9em;
+						}
+					}
+
+					&.fep-trodd1 {
+						background-color: @body-bg;
+					}
+				}
+				tr:not(.fep-head) {
+					&:hover{
+						background-color: @text-color;
+						.transition( all 0.2s ease );
+						td {
+							color: #fff;
+							a:not(.btn-primary){
+								color: #fff;
+								&:hover{
+									color: inherit;
+								}
+							}
+							h3 {
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#wp-message_content-editor-container {
+			border: 1px solid #e3e3e3;
+		}
+
+		form {
+			input[type="text"] {
+				.form-control();
+			}
+			input[type="submit"] {
+				.btn();
+			}
+		}
+
+		#fep-result {
+			border: dotted 1px #333;
+			background-color: @body-bg;
+			margin-top: -25px;
+			width: 400px;
+			li {
+				border: none;
+			}
+		}
+
+		#fep-{
+			&error,
+			&wp-error{
+				padding: @alert-padding;
+				background: @alert-danger-bg;
+				color: @alert-danger-text;
+				border-color: @alert-danger-border;
+			}
+			&success{
+				padding: @alert-padding;
+				background: @alert-success-bg;
+				color: @alert-success-text;
+				border-color: @alert-success-border;
+			}
+		}
+	}
+}
+
+.candidate-message-action {
+	margin-top: 40px;
+}

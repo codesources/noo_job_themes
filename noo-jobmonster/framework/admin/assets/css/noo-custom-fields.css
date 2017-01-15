@@ -1,0 +1,57 @@
+.noo-form-group._education	.noo-control,
+.noo-form-group._experience	.noo-control,
+.noo-form-group._skill	.noo-control {
+	width: 100%;
+}
+
+.noo-addable-fields {
+	width: 100%;
+}
+
+.noo-addable-fields td {
+	vertical-align: top;
+}
+
+.noo-addable-fields th {
+	background: #ddd;
+	min-width: 20px;
+	height: 40px;
+}
+
+.noo-addable-fields tbody tr td:last-child {
+	text-align: center
+}
+
+.noo-disable-field {
+	background-color: #ddd;
+}
+
+.btn-default {
+	color: #44494b;
+    background-color: #ebeeef;
+    border-color: #ebeeef;
+}
+
+.btn {
+	display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.7142857142857143em 2.2857142857142856em;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: border-color color 0.2s ease;
+    -o-transition: border-color color 0.2s ease;
+    transition: border-color color 0.2s ease;
+}

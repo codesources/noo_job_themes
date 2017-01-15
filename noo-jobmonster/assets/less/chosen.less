@@ -1,0 +1,23 @@
+/**
+ * 9.0 - Main file
+ * 	9.1 - main
+ */
+
+
+.form-group {
+	.chosen-container-single,
+	.chosen-container-multi .chosen-choices {
+		&:extend(.form-control);
+		background-image: none;
+		min-height: 50px !important;
+		height: auto  !important;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}
+select[multiple],
+select[size] {
+  	&.form-control-chosen {
+  		height: 50px;
+  	}
+}

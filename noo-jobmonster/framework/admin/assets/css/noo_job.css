@@ -1,0 +1,173 @@
+.type-noo_job .column-title a.row-title {
+	width: 100%;
+	display: block;
+}
+.widefat .column-job_posted strong {
+	display: block;
+	margin-bottom: 0.2em;
+}
+.widefat .column-job_application_actions,
+.widefat .column-job_actions {
+	text-align: right;
+	width: 150px;
+}
+.widefat .column-job_application_actions .actions
+.widefat .column-job_actions .actions {
+	padding-top: 2px;
+}
+.widefat .column-job_application_actions a.button,
+.widefat .column-job_actions a.button {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em !important;
+	height: 2em !important;
+	line-height: 2em !important;
+	margin: 0 0 2px 4px;
+	overflow: hidden;
+	padding: 0 !important;
+	width: 2em !important;
+}
+.widefat .column-job_application_actions a.button i,
+.widefat .column-job_actions a.button i {
+	line-height: 24px;
+	width: 26px;
+	height: 26px;
+}
+.job-application-status,
+.widefat .column-job_type .job-type {
+	/*background-color: #458cce;*/
+	border-radius: 2px;
+	color: #fff;
+	display: block;
+	font-size: 11px;
+	padding: 4px;
+	text-align: center;
+}
+.widefat .column-job_type .job-type a {
+	color: #fff;
+}
+.widefat .column-job_type .job-type a:hover {
+	border-bottom: 1px dotted #fff;
+}
+.job-application-status{
+	background:#a3a3a3;
+}
+.widefat .column-job_application_posted,
+.widefat .column-job_application_actions,
+.widefat .column-application_status,
+.widefat .column-job_type,
+.widefat .column-job_closing,
+.widefat .column-job_expires,
+.widefat .column-job_status,
+.widefat .column-job_posted {
+	width: 8%;
+}
+
+.widefat .column-job_category {
+	width: 12%;
+}
+
+.widefat .column-featured_job,
+.widefat .column-application {
+	width: 6%;
+}
+
+.fixed .column-comments {
+	width: 4%;
+}
+.widefat .column-job_status,
+.widefat .column-featured_job,
+.widefat .column-application {
+	text-align: center;
+}
+.column-attachment i.dashicons {
+	width: 15px;
+	height: 15px;
+	font-size: 15px;
+	line-height: 25px;
+}
+.column-attachment a {
+	line-height: 25px;
+}
+
+.job-application-status-Rejected{
+	background:#a3a3a3;
+}
+.job-application-status-Pending{
+	background:#e6b706;
+}
+.job-application-status-Approved{
+	background:#ee5b4c;
+}
+/* TipTip CSS - Version 1.2 */
+#tiptip_holder {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+}
+#tiptip_holder.tip_top {
+	padding-bottom: 5px;
+}
+#tiptip_holder.tip_bottom {
+	padding-top: 5px;
+}
+#tiptip_holder.tip_right {
+	padding-left: 5px;
+}
+#tiptip_holder.tip_left {
+	padding-right: 5px;
+}
+#tiptip_content {
+	font-size: 11px;
+	color: #fff;
+	padding: 4px 8px;
+	background: #464646;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.10);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.10);
+	text-align: center;
+}
+code {
+	background: #999;
+	padding: 1px;
+}
+#tiptip_arrow, #tiptip_arrow_inner {
+	position: absolute;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 6px;
+	height: 0;
+	width: 0;
+}
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+	margin-top: -7px;
+	margin-left: -6px;
+	border-top-color: #464646;
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+	margin-top: -5px;
+	margin-left: -6px;
+	border-bottom-color: #464646;
+}
+
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+	margin-top: -6px;
+	margin-left: -5px;
+	border-right-color: #464646;
+}
+
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+	margin-top: -6px;
+	margin-left: -7px;
+	border-left-color: #464646;
+}
+
+.noo-disable-field {
+	background-color: #ddd;
+}

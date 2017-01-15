@@ -1,0 +1,114 @@
+<wpml-config>
+    <custom-fields>
+        <custom-field action="translate">_featured</custom-field>
+        <custom-field action="copy">_application_email</custom-field>
+        <custom-field action="copy">_custom_application_url</custom-field>
+        <custom-field action="translate">_company_id</custom-field>
+        <custom-field action="copy">_closing</custom-field>
+        <custom-field action="copy">_expires</custom-field>
+
+        <custom-field action="translate">_job_category</custom-field>
+        <custom-field action="translate">_job_location</custom-field>
+        <custom-field action="copy">url_video</custom-field>
+        <custom-field action="copy">_education_school</custom-field>
+        <custom-field action="copy">_education_qualification</custom-field>
+        <custom-field action="copy">_education_date</custom-field>
+        <custom-field action="copy">_education_note</custom-field>
+        <custom-field action="copy">_experience_employer</custom-field>
+        <custom-field action="copy">_experience_job</custom-field>
+        <custom-field action="copy">_experience_date</custom-field>
+        <custom-field action="copy">_experience_note</custom-field>
+        <custom-field action="copy">_skill_name</custom-field>
+        <custom-field action="copy">_skill_percent</custom-field>
+
+        <custom-field action="copy">_logo</custom-field>
+        <custom-field action="copy">_website</custom-field>
+        <custom-field action="copy">_facebook</custom-field>
+        <custom-field action="copy">_twitter</custom-field>
+        <custom-field action="copy">_googleplus</custom-field>
+        <custom-field action="copy">_linkedin</custom-field>
+        <custom-field action="copy">_instagram</custom-field>
+
+        <custom-field action="copy">_noo_body_css</custom-field>
+
+        <custom-field action="copy">_job_posting_limit</custom-field>
+        <custom-field action="copy">_job_feature_limit</custom-field>
+        <custom-field action="copy">_job_posting_unlimit</custom-field>
+        <custom-field action="copy">_job_display_duration</custom-field>
+        <custom-field action="copy">_can_view_resume</custom-field>
+        <custom-field action="copy">_product_image_gallery</custom-field>
+    </custom-fields>
+    <custom-types>
+        <custom-type translate="1">noo_job</custom-type>
+        <custom-type translate="1">noo_company</custom-type>
+        <custom-type translate="1">noo_application</custom-type>
+        <custom-type translate="1">noo_resume</custom-type>
+        <custom-type translate="1">noo_job_alert</custom-type>
+    </custom-types>    
+    <taxonomies>
+        <taxonomy translate="1">job_category</taxonomy>
+        <taxonomy translate="1">job_type</taxonomy>
+        <taxonomy translate="1">job_location</taxonomy>
+        <taxonomy translate="1">job_tag</taxonomy>
+    </taxonomies>    
+    <admin-texts>
+        <key name="noo_job_general" >
+            <key name="default_job_content" />
+            <key name="submit_agreement" />
+        </key>
+        <key name="theme_mods_noo-jobmonster">
+            <key name="noo_blog_heading_title"/>
+            <key name="noo_bottom_bar_content"/>
+        </key>
+        <key name="noo_email_template">
+            <key name="admin_job_submitted_subject"/>
+            <key name="admin_job_submitted_content"/>
+
+            <key name="admin_resume_subject"/>
+            <key name="admin_resume_content"/>
+
+            <key name="employer_registration_subject"/>
+            <key name="employer_registration_content"/>
+
+            <key name="employer_job_submitted_subject"/>
+            <key name="employer_job_submitted_content"/>
+
+            <key name="employer_job_approved_subject"/>
+            <key name="employer_job_approved_content"/>
+
+            <key name="employer_job_rejected_subject"/>
+            <key name="employer_job_rejected_content"/>
+
+            <key name="employer_job_application_attachment"/>
+            <key name="employer_job_application_subject"/>
+            <key name="employer_job_application_content"/>
+
+            <key name="candidate_registration_subject"/>
+            <key name="candidate_registration_content"/>
+
+            <key name="candidate_application_subject"/>
+            <key name="candidate_application_content"/>
+
+            <key name="candidate_approved_subject"/>
+            <key name="candidate_approved_content"/>
+
+            <key name="candidate_rejected_subject"/>
+            <key name="candidate_rejected_content"/>
+
+            <key name="candidate_resume_subject"/>
+            <key name="candidate_resume_content"/>
+
+            <key name="candidate_resume_approved_subject"/>
+            <key name="candidate_resume_approved_content"/>
+
+            <key name="candidate_resume_rejected_subject"/>
+            <key name="candidate_resume_rejected_content"/>
+
+            <key name="verify_email_subject"/>
+            <key name="verify_email_content"/>
+        </key>
+    </admin-texts>
+
+</wpml-config>
+
+

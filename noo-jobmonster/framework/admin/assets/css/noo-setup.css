@@ -1,0 +1,62 @@
+#noo_tools {
+  width: 99%;
+}
+#noo_tools .item_tools {
+  background: #fff;
+  padding: 6px;
+  cursor: pointer;
+}
+#noo_tools .item_tools:before {
+  content: "→";
+}
+#noo_tools .item_tools:hover {
+  font-weight: bold;
+}
+#noo_tools .noo_hide {
+  display: none;
+  background: #fff;
+  padding: 10px;
+  margin-top: 15px;
+}
+#noo_tools .noo_hide .item {
+  width: 32%;
+  position: relative;
+  text-align: center;
+  float: left;
+  border: 1px solid #ddd;
+  margin: 5px;
+}
+#noo_tools .noo_hide .item .button-install {
+  display: none;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}
+#noo_tools .noo_hide .item img {
+  max-width: 100%;
+}
+#noo_tools .noo_hide .item .item_footer {
+  border: 1px solid #ddd;
+  padding: 8px 20px;
+}
+#noo_tools .noo_hide .item .item_footer .more-detail {
+  float: left;
+}
+.noo-load-ajax{
+    background-image: url("../images/spinner.gif");
+    bottom: 0;
+    height: 48px;
+    width: 125px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center center;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #FAFAFA ;
+}
+.noo-load-show{
+    opacity: 1;
+    z-index: 22;
+}

@@ -1,0 +1,49 @@
+.upload-btn-wrap {
+	width: 200px;
+	float: left;
+	text-align: left;
+}
+.upload-preview-wrap {
+	min-height: 50px;
+	float: left;
+	width: auto;
+
+	.image-upload-thumb {
+		position: relative;
+		width: auto;
+		float: left;
+		max-width: 150px;
+		& + .image-upload-thumb {
+			margin-left: 20px;
+		}
+		&.old-item {
+			display: none;
+		}
+		img {
+			border: 1px solid #ddd;
+			width: 70px;
+		    margin: 5px;
+		    padding: 5px;
+		}
+
+		a.delete-uploaded {
+			position: absolute;
+			top: 0;
+			right: -5px;
+			line-height: 1;
+			font-size: 20px;
+			i {
+				color: @brand-danger;
+			}
+		}
+	}
+}
+a.delete-pluploaded {
+	display: inline-block;
+	i {
+		color: @brand-danger;
+	}
+	&, &:hover {
+		color: transparent;
+	}
+}

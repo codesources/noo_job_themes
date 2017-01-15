@@ -1,0 +1,31 @@
+table.wp-list-table span.product-type.job_package:before,
+table.wp-list-table span.product-type.resume_package:before,
+table.wp-list-table span.product-type.job_package_addon:before {
+	font-family: dashicons;
+	font-size: 24px;
+	margin-left: -3px;
+}
+table.wp-list-table span.product-type.job_package:before {
+	content: "\f338";
+}
+table.wp-list-table span.product-type.resume_package:before {
+	content: "\f336";
+}
+table.wp-list-table span.product-type.job_package_addon:before {
+	content: "\f307";
+}
+
+.woocommerce_options_panel .time-interval input[type=number] {
+	width: 200px;
+	display: inline-block;
+	float: left;
+	margin: 0;
+}
+
+.woocommerce_options_panel .time-interval select {
+	width: 100px;
+	display: inline-block;
+	float: left;
+	margin: 0 0 0 -3px;
+	background-color: #ddd;
+}

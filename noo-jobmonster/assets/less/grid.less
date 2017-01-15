@@ -1,0 +1,208 @@
+/**
+ * 2.0 - Core CSS
+ *  2.3 - grid
+ */
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  .container-fixed();
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  .container-fixed();
+}
+
+.container-boxed {
+  .container-fixed();
+
+  //width: @container-width; // width by percent
+  @media (min-width: @screen-sm-min) {
+    width: 96.2%;
+  }
+  @media (min-width: @screen-md-min) {
+     width: 97%;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: 97%;
+  }
+  &.max {
+    max-width: @container-max-width;
+  }
+  &.offset {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+  }
+  @media (max-width: @grid-float-breakpoint-max) {
+    width: 100%; // width by percent
+    &.max {
+    max-width: 100%;
+    }
+    &.offset {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 40px auto;
+    }
+  }
+}
+.container-fullwidth{
+  &:extend(.clearfix all);
+  overflow: hidden;
+  width: 100%;
+}
+@media (min-width: 800px) and (max-width: @screen-sm-max)  {
+  .container-boxed{
+    width: 97%;
+  }
+
+  .noo-main{ 
+    float: left;
+    width: percentage((8 / @grid-columns));
+  }
+  .col-md-12.noo-main{
+    width: inherit;
+    float: none;
+  }
+  .noo-sidebar{
+    float: left;
+    width: percentage((4 / @grid-columns));
+  }
+}
+
+.noo-sidebar{
+
+}
+.noo-sidebar-wrap{
+  background: #fff;
+  padding: 0;
+  @media (max-width: @screen-sm-max) {
+    margin-top: @grid-gutter-width;
+  }
+}
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  .make-row();
+}
+
+.noo-vc-row {
+  position: relative;
+  &.bg-image,
+  &.bg-pattern {
+    
+  }
+  
+  &.bg-image {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .noo-vc-col{
+      position: relative;
+      z-index:1;
+    }
+  }
+  &.image-repeat{
+    background-repeat: repeat;
+  }
+  &.bg-pattern {
+    background-repeat: repeat;
+  }
+
+  &.bg-video {
+    position: relative;
+    overflow: hidden;
+
+    #big-video-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    #big-video-wrap .vjs-tech {
+      left: 0;
+      margin: 0;
+    }
+  }
+
+  &.border-top {
+    border-top: 1px solid @border-color-base; 
+  }
+
+  &.border-left {
+    border-left: 1px solid @border-color-base; 
+  }
+
+  &.border-right {
+    border-right: 1px solid @border-color-base; 
+  }
+
+  &.border-bottom {
+    border-bottom: 1px solid @border-color-base; 
+  }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+.make-grid-columns();
+
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+.make-grid(xs);
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: @screen-sm-min) {
+  .make-grid(sm);
+}
+
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+  .make-grid(md);
+}
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-lg-min) {
+  .make-grid(lg);
+}

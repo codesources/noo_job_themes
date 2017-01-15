@@ -1,0 +1,194 @@
+/**
+ * 5.0 - Additional Element
+ *  5.9 - progress-bars
+ */
+
+
+// Bar animations
+// -------------------------
+
+// WebKit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 2.5em 0; }
+  to    { background-position: 0 0; }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+  from  { background-position: 2.5em 0; }
+  to    { background-position: 0 0; }
+}
+
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.progress {
+  // overflow: hidden;
+  // height: @line-height-computed;
+  height: @progress-height;
+  margin-bottom: @line-height-computed;
+  background-color: @progress-bg;
+  border-radius: 10px;
+  .box-shadow(none);
+}
+
+// Bar of progress
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: @font-size-small;
+  line-height: @line-height-computed;
+  color: @progress-bar-color;
+  text-align: center;
+  background-color: @progress-bar-bg;
+  border-radius: 10px;
+  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  .transition(all 0s ease 0s);
+  position: relative;
+
+  .progress_label{
+    .opacity(0);
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    left: auto;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #44494b;
+    border-radius: 50%;
+    text-align: center;
+  }
+}
+
+// Striped bars
+//
+// `.progress-striped .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar-striped` class, which you just add to an existing
+// `.progress-bar`.
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  #gradient > .striped();
+  background-size: 2.5em 2.5em;
+}
+
+// Call animation for the active one
+//
+// `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar.active` approach.
+.progress.active .progress-bar,
+.progress-bar.active {
+  .animation(progress-bar-stripes 2s linear infinite);
+}
+
+// Account for lower percentages
+.progress-bar {
+  &[aria-valuenow="1"],
+  &[aria-valuenow="2"] {
+    min-width: @grid-gutter-width;
+  }
+
+  &[aria-valuenow="0"] {
+    color: @gray-light;
+    min-width: @grid-gutter-width;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+  }
+}
+
+
+
+// Color Variations
+// -------------------------
+
+.progress-bar-success {
+  .progress-bar-variant(@progress-bar-success-bg);
+}
+
+.progress-bar-info {
+  .progress-bar-variant(@progress-bar-info-bg);
+}
+
+.progress-bar-warning {
+  .progress-bar-variant(@progress-bar-warning-bg);
+}
+
+.progress-bar-danger {
+  .progress-bar-variant(@progress-bar-danger-bg);
+}
+
+// Style Variations: Lean-bar and Thick-bar
+// -------------------------
+.noo-progress-bar.lean-bars {
+  .progress {
+    height: @lean-bars-height;
+    margin-bottom: 2.5em;
+    border-radius: 0;
+    overflow: visible;
+    position: relative;
+    .progress-bar {
+      .progress_title,
+      .progress_label {
+        position: absolute;
+        top: -1.6em;
+        color: @lean-bars-text-color;
+        font-size: @font-size-base;
+        font-weight: @font-weight-base;
+      }
+      .progress_title {
+        left: 0;      
+      }
+      .progress_label {
+        right: 0;
+      }
+    }
+  }
+}
+.lean-bars.rounded-bars {
+  .progress { 
+    .border-radius(@border-radius-base);
+    .progress-bar {
+      .border-radius(@border-radius-base);
+    }
+  }
+}
+.noo-progress-bar.thick-bars {
+  .progress {
+    .border-radius(0);
+    .progress-bar {
+      .box-shadow(none);
+      font-size: @font-size-base;
+      .progress_title {
+        float: left;
+        padding: 0 0 0 (@grid-gutter-width / 2);
+        line-height: 1.6em;
+      }
+      .progress_label {
+        float: right;
+        padding: 0 (@grid-gutter-width / 2) 0 0;
+        line-height: 1.6em;
+      }
+    }
+  }
+}
+.thick-bars.rounded-bars {
+  .progress,
+  .progress-bar {
+    .border-radius(@border-radius-base);
+  }
+}
+
+.rtl {
+  .progress-bar {
+    float: right;
+    .progress_label {
+      right: auto;
+      left: -10px;
+    }
+  }
+}

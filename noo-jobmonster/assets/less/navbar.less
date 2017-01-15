@@ -1,0 +1,971 @@
+/**
+ * 4.0 - Basic Element
+ *  4.6 - navbar
+ */
+
+
+//
+// Basic Structure
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+.navbar {
+	position: relative;
+	//height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+	z-index: @zindex-navbar;
+	background-color: @navbar-default-bg;
+	// Prevent floats from breaking the navbar
+	&:extend(.clearfix all);
+
+	// Add position relative to container
+	.container,
+	.container-fluid,
+	.container-boxed {
+		position: relative;
+	}
+}
+
+
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+.navbar-header {
+	&:extend(.clearfix all);
+	@media (min-width: @navbar-float-breakpoint) {
+		float: left;
+	}
+}
+
+
+// Navbar collapse (body)
+//
+// Group your navbar content into this for easy collapsing and expanding across
+// various device sizes. By default, this content is collapsed when <768px, but
+// will expand past that for a horizontal display.
+//
+// To start (on mobile devices) the navbar links, forms, and buttons are stacked
+// vertically and include a `max-height` to overflow in case you have too much
+// content for the user's viewport.
+
+.navbar-collapse {
+	//max-height: @navbar-collapse-max-height;
+	//overflow-x: visible;
+	float: right;
+	@media (max-width: @navbar-float-breakpoint-max) {
+		float: none;
+		clear: both;
+	}
+	&:extend(.clearfix all);
+	&.in {
+		// overflow-y: auto;
+	}
+
+	@media (min-width: @navbar-float-breakpoint) {
+		width: auto;
+		// border-top: 0;
+		// box-shadow: none;
+
+		&.collapse {
+			display: block !important;
+			height: auto !important;
+			padding-bottom: 0; // Override default setting
+			overflow: visible !important;
+		}
+
+		&.in {
+			// overflow-y: visible;
+		}
+	}
+}
+
+
+//
+// Navbar alignment options
+//
+// Display the navbar across the entirety of the page or fixed it to the top or
+// bottom of the page.
+
+
+// Fix the top/bottom navbars when screen real estate supports it
+.fixed-top {
+	.transition( all 0.3s ease );
+}
+.navbar-fixed-top{
+	@media (min-width: @navbar-float-breakpoint) {
+		position: fixed;
+		right: 0;
+		left: 0;
+		z-index: @zindex-navbar-fixed;
+		background-color: @navbar-fixed-bg;
+		// .box-shadow(@navbar-default-box-shadow);
+		&.bg-transparent {
+			background-color: @navbar-fixed-bg;
+		}
+	}
+	// Add the width on site boxed layout
+	body.boxed-layout & {
+		margin-right: auto;
+		margin-left: auto;
+		width:@site-width;
+		max-width: @site-max-width;
+	}
+	body.nice-scroll:not(.boxed-layout) & {
+		padding-right: 10px;
+	}
+	body.boxed-layout.nice-scroll & {
+		.calc-width(@site-width,~"90% - 10px");//@site-width;
+		left: -10px;
+	}
+	// &.navbar {
+	// 	height: 60px;
+	// }
+}
+
+.navbar-fixed-top {
+	top: 0;
+	@media (min-width: @navbar-float-breakpoint) {
+		&.navbar-shrink {
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+
+			//min-height: @navbar-shrink-height;
+			//.transition(padding 0.3s height 0.3s ease-in-out 0.2s);
+
+			.navbar-nav > li > a {
+				//padding-top:    @navbar-shrink-padding-top;
+				//padding-bottom: @navbar-shrink-padding-bottom;
+				// color: @text-color;
+				//.transition(padding 0.3s height 0.3s ease-in-out 0.2s);
+			}
+		
+			.navbar-brand {
+				padding: 0;
+				//height: @navbar-shrink-height;
+				//.transition(padding 0.3s height 0.3s ease-in-out 0.2s);
+			}
+			.navbar-brand .noo-logo-img, 
+			.navbar-brand .noo-logo-mobile-img {
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				position: relative;
+				vertical-align: top;
+			}
+		}
+	}
+}
+
+// Brand
+.navbar-brand {
+	float: left;
+	//padding: @logo-padding-vertical @logo-padding-horizontal;
+	font-family: @logo-font-family;
+	font-weight: @logo-font-weight;
+	font-style: @logo-font-style;
+	font-size: @logo-font-size;
+	height: @navbar-height;
+	line-height: @navbar-height;
+	&, &:hover {
+		color: @logo-font-color;
+	}
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+	img{
+		max-height: @navbar-height;
+		vertical-align: baseline;
+	}
+	.noo-logo-img,
+	.noo-logo-mobile-img {
+		//height: @logo-image-height;
+		top: 50%;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		position: relative;
+		vertical-align: middle;
+	}
+
+	.noo-logo-img {
+		display: block;
+	}
+	.noo-logo-mobile-img,
+	.noo-logo-floating {
+		display: none;
+	}
+	@media (max-width: @navbar-float-breakpoint-max) {
+		.noo-logo-img {
+			display: none;
+		}
+		.noo-logo-mobile-img{
+			display: block;
+		}
+	}
+}
+.navbar-fixed-top {
+	.navbar-brand .noo-logo-img, .navbar-brand .noo-logo-mobile-img {
+		//height: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		position: relative;
+		vertical-align: baseline;
+		//height: 70%;
+	}
+}
+/* retina logo */
+// 
+
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.navbar-toggle {
+	position: relative;
+	float: right;
+	font-size: @navbar-toggle-size;
+	line-height: @navbar-height;
+	height: @navbar-height;
+	display: table;
+	padding: 0 15px;
+	border-radius: @border-radius-base;
+	// margin-right: @navbar-padding-horizontal;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	cursor: pointer;
+	.navbar-toggle-icon-bars{
+		display: inline-block;
+		.icon-bar {
+		    display: block;
+		    width: 30px;
+		    height: 3px;
+		    .border-radius(2px);
+		    background-color: @navbar-default-toggle-color;
+	   }
+	}
+	.icon-bar + .icon-bar {
+	    margin-top: 5px;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+
+	@media (min-width: @navbar-float-breakpoint) {
+		display: none;
+	}
+}
+
+//
+// SuperFish Menu, prefer over Bootstrap menu because of hover trigger.
+// Use as default Nav
+//
+.sf-menu,
+.noo-menu {
+	&, * {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		text-decoration: none;
+	}
+
+	> li {
+
+		display: inline-block;
+		@media (max-width: @navbar-float-breakpoint-max) {
+			display: block;
+		}
+
+	}
+
+	li {
+		position: relative;
+		&:hover,
+		.sfHover {
+			> ul.sub-menu {
+				display: block;
+			}
+		}
+		&.divider{
+			background-color: @navbar-default-border;
+		    height: 1px;
+		    margin: 9px 0;
+		    overflow: hidden;
+		}
+	}
+	li > a {
+		// white-space: nowrap;
+		> .fa{
+			margin-right: 5px;
+		}
+	}
+
+	ul.sub-menu {
+		position: absolute;
+		display: none;
+		top: auto;
+		left: auto;
+		width: auto;
+		min-width: 200px;
+	}
+
+	&:extend(.clearfix all);
+}
+
+// Default class for menu. Use it for top menu or footer menu.
+.noo-menu {
+	li {
+		> a {
+			color: @nav-link-color;
+			padding: @nav-link-padding;
+
+			&:hover,
+			&:focus {
+				background-color: @nav-link-hover-bg;
+				color: @nav-link-hover-color;
+			}
+		}
+
+		&.current-menu-item,
+		&.active{
+			> a {
+				background-color: @nav-active-link-bg;
+				color: @nav-active-link-color;
+			}
+		}
+
+		&.disabled {
+			> a {
+				&,
+				&:hover,
+				&:focus {
+					color: @nav-disabled-link-color;
+					background-color: @nav-disabled-link-hover-color;
+				}
+			}
+		}
+	}
+
+	ul.sub-menu {
+		z-index: @zindex-navbar-fixed;
+		background-color: @dropdown-bg;
+		border: 1px solid @dropdown-fallback-border; // IE8 fallback
+		border: 1px solid @dropdown-border;
+		border-radius: @border-radius-base;
+
+		ul.sub-menu {
+			top: @submenu-offset-top;
+			left: @submenu-offset-horizontal;
+			right: auto;
+		}
+	}
+}
+
+// Caret
+// .noo-menu .menu-item-has-children > a,
+.sf-arrows .sf-with-ul {
+	&:after {
+		content: "";
+		font-family: "fontawesome";
+		display: inline-block;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		-webkit-font-smoothing: antialiased;
+		speak: none;
+		padding-left: @icon-padding-base;
+	}
+	@media (max-width: @navbar-float-breakpoint-max) {
+		&:after {
+			float: right;
+		}
+	}
+}
+.sf-arrows .sub-menu .sf-with-ul {
+	&:after {
+		content: "\f105";
+		font-family: "fontawesome";
+		display: inline-block;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		-webkit-font-smoothing: antialiased;
+		speak: none;
+		right: 15px;
+		position: absolute;
+	}
+}
+.sf-arrows .sub-menu {
+	.sub-menu::before {
+		
+	}
+}
+
+// Navbar-nav default behavior
+// 
+.navbar {
+	border-bottom: 1px solid @navbar-default-border;
+	// Uncollapsed menu
+	// @media (min-width: @navbar-float-breakpoint) {
+	// 	&.navbar-fixed-left {
+	// 		border-right: 1px solid @border-color-base;
+	// 	}
+	// 	&.navbar-fixed-right {
+	// 		border-left: 1px solid @border-color-base;
+	// 	}
+	// }
+}
+
+.navbar-nav {
+	@media (max-width: @navbar-float-breakpoint-max) {
+		border-top: 1px solid  @navbar-default-border;
+		> li > a{
+			font-weight: bold !important;
+		}
+		li{
+			background-color: @navbar-default-bg;
+		}
+	}
+	li {
+		> a {
+			color: @navbar-default-link-color;
+			padding: @navbar-link-padding;
+			line-height: @navbar-line-height;
+			font-size: @navbar-font-size;
+			
+			&:hover,
+			&:focus {
+				color: @navbar-default-link-hover-color;
+				//background-color: @navbar-default-link-hover-bg;
+			}
+		}
+
+		&:hover, .sfHover {
+			> a {
+				//background-color: @navbar-default-link-hover-bg;
+				color: @navbar-default-link-hover-color;
+			}
+		}
+
+		&.current-menu-item,
+		&.active{
+			> a {
+				//background-color: @navbar-default-link-active-bg;
+				color: @navbar-default-link-active-color;
+			}
+		}
+
+		&.disabled {
+			> a {
+				&,
+				&:hover,
+				&:focus {
+					color: @navbar-default-link-disabled-color;
+					//background-color: @navbar-default-link-disabled-bg;
+				}
+			}
+		}
+	}
+	> li > a {
+		font-weight: bold;
+	}
+
+	ul.sub-menu {
+		z-index: @zindex-navbar-fixed;
+		font-size: @submenu-font-size;
+		@media (max-width: @navbar-float-breakpoint-max) {
+			> li > a{
+				padding-left: 25px;
+			}
+			> li li a {
+				padding-left: 35px;
+			}
+		}
+		li {
+			display: block;
+			margin: 0px 15px;
+			> a{
+				color: @dropdown-link-color;
+				// border-top: 1px solid #F1F0F0;
+				line-height: 22px;
+				padding: 10px 12px;
+				&:hover{
+					color: @navbar-sub-default-link-hover-color;
+					//background-color: @navbar-sub-default-link-hover-bg;
+				}
+				
+			}
+			// &:first-child{
+			// 	a{
+			// 		border-top: none;
+			// 	}
+			// }
+			&:hover
+			&.sfHover{
+				> a{
+					color: @navbar-sub-default-link-hover-color;
+					//background-color: @navbar-sub-default-link-hover-bg;
+				}
+			}
+			&.current-menu-item {
+				> a {
+					color: @navbar-sub-default-link-hover-color;
+					//background-color: @navbar-sub-default-link-hover-bg;
+				}
+			}
+		}
+	}
+
+	// Uncollapsed Menu
+	@media (min-width: @navbar-float-breakpoint) {
+		// By default, menu on the right.
+		float: right;
+
+		> li {
+			> a {
+				padding-top:0;
+				padding-bottom:0;
+				line-height: @navbar-height;
+				font-family: @headings-font-family;
+			}
+			> ul.sub-menu {
+				// Default right alignment
+				left: auto;
+				right: 0;
+
+				// Sub-menu open to left by default ('cause menu on the right)
+				ul.sub-menu {
+					top: @submenu-offset-top;
+					left: auto;
+					right: @submenu-offset-horizontal;
+				}
+			}
+		}
+	}
+
+	// Collapsed menu
+	@media (max-width: @navbar-float-breakpoint-max) {
+		//margin: 20px 0;
+
+		> li {
+			float: none;
+		}
+
+		li > a {
+			white-space: normal;
+		}
+
+		li {
+			.transition(none);
+		}
+
+		// Display all sub-menu nav items on mobile.
+		ul.sub-menu {
+			//display: block !important;
+			//opacity: 1 !important;
+			position: static;
+			float: none;
+			max-width: none;
+			//margin: 0 20px;
+			padding: 0;
+			border: none;
+			border-radius: 0;
+			.box-shadow(none);
+			.transition(none);
+
+			&:before, &:after {
+				display: none;
+			}
+
+			// Reset dropdown font size to match top level.
+			a {
+				font-size: @navbar-font-size;
+			}
+		}
+	}
+}
+
+// Uncollapsed Menu
+@media (min-width: @navbar-float-breakpoint) {
+	// Move the link height here so that navbar can change height later
+	.navbar {
+		.navbar-brand {
+			line-height: @navbar-height;
+		}
+	}
+	// Move the link height here so that navbar can change height later
+	// .navbar.navbar-fixed-left
+	// .navbar.navbar-fixed-right {
+	// 	.navbar-nav{
+	// 		> li > a {
+	// 			padding-top:0;
+	// 			padding-bottom:0;
+	// 			line-height: @side-navbar-link-height;
+	// 		}
+	// 	}
+	// } 
+}
+
+// Enhanced feature: fly over and mega menu only on PC
+// and not when navbar fixed on the side
+.navbar-nav.sf-menu {
+	// Only on PC
+	@media (min-width: @navbar-float-breakpoint) {
+		> li {
+			ul.sub-menu {
+				box-shadow: @submenu-left-default-box-shadow;
+				background-color: @submenu-default-bg;
+				.border-radius(@border-radius-base);
+			}
+
+			> ul.sub-menu {
+				margin-top: 2px;
+				padding: 5px 0;
+				// border-top: 2px solid @brand-primary;
+				// &:before {
+				// 	content: '';
+				// 	position: absolute;
+				// 	bottom: 100%;
+				// 	left: 35px;
+				// 	top: -10px;
+				// 	border-right: 8px solid transparent;
+				// 	border-bottom: 8px solid @brand-primary;
+				// 	border-left: 8px solid transparent;
+				// }
+			}
+
+			li {
+				&.fly-left {
+					> ul.sub-menu {
+						left: auto;
+						right: @submenu-offset-horizontal;
+						box-shadow: @submenu-left-default-box-shadow;
+					}
+				}
+				&.fly-right {
+					> ul.sub-menu {
+						left: @submenu-offset-horizontal;
+						right: auto;
+						box-shadow: @submenu-right-default-box-shadow;
+					}
+				}
+			}
+
+			// Alignment ( override the default right alignment )
+			&.align-left {
+				> ul.sub-menu {
+					left: 0;
+					right: auto;
+				}
+			}
+			&.align-right {
+				> ul.sub-menu {
+					left: auto;
+					right: 0;
+					// &:before {
+					// 	right: 35px!important;
+					// 	left: auto!important;
+					// 	border-right: 8px solid transparent;
+					// 	border-bottom: 8px solid @brand-primary;
+					// 	border-left: 8px solid transparent;
+					// }
+				}
+			}
+			&.align-center {
+				> ul.sub-menu {
+					left: 50% !important;
+					right: auto;
+					.translate ( -50%, 0 );
+					// &:before {
+					// 	right: 50%;
+					// 	left: auto;
+					// 	transform: translateX(-50%);
+					// 	-webkit-transform: translateX(-50%);
+					// 	border-right: 8px solid transparent;
+					// 	border-bottom: 8px solid @brand-primary;
+					// 	border-left: 8px solid transparent;
+					// }
+				}
+
+			}
+
+			&.full-width {
+				position: inherit !important;
+				> ul.sub-menu {
+					width: 100%;
+					left: 0;
+					
+					}
+			}
+			&.full-width.sfHover {
+				> ul.sub-menu {
+					&:before {
+						border: 0;
+					}
+				}
+				> a {
+					position: relative;
+					// &:before {
+					// 	content: '';
+					// 	position: absolute;
+					// 	left: 35px;
+					// 	bottom: 0px;
+					// 	border-right: 6px solid transparent;
+					// 	border-bottom: 6px solid @brand-primary;
+					// 	border-left: 6px solid transparent;
+					// }
+				}
+			}
+
+			// 6. mega menu
+			&.megamenu {
+
+				// @columns-2-width: 49.6%;
+				// @columns-3-width: 32.8%;
+				// @columns-4-width: 24.45%;
+				// @columns-5-width: 19.45%;
+				// @columns-6-width: 16.1%;
+
+				> ul.sub-menu {
+					padding: 15px 0 15px 4px; // edit base on style						
+					li{
+						float: left;
+						width: 100%;
+					}
+					li > a {
+						white-space: normal;
+					}
+
+					> li {
+						display: table-cell !important;
+						float: none !important;
+						margin: 5px 0;
+						padding-left: 0;
+						padding-right: 0;
+						vertical-align: top;
+						position: relative;
+
+						// default 3 columns
+						width: 32.8%;
+
+						> ul.sub-menu {
+							display: block !important;
+							opacity: 1 !important;
+							top: 0px !important;
+							width: 100%;
+							left: 0px !important;
+							position: relative !important;
+							.box-shadow(none);
+							background-color: transparent;
+						}
+
+						&.menu-item-has-children {
+							border-right: 1px solid rgba(65, 65, 65, 0.1);
+							&:last-child {
+								border-right: none !important;
+							}
+							> a {
+								background-color: transparent;
+								text-transform: uppercase;
+								font-weight: bold;
+								letter-spacing: 2px;
+
+								&.sf-with-ul {
+									&:before, &:after { 
+										display: none;
+									}
+								}
+							}
+						}
+
+						&.menu-item-has-children:hover, &.menu-item-has-children.sfHover {
+							> a {
+								background-color: transparent;
+							}
+						}
+					}
+				}
+
+				ul.sub-menu li > a {
+					border-top: 0;
+				}
+
+				&.columns-2 > ul.sub-menu {
+					> li { width: 49.6%; }
+					> li:nth-child(2n) {
+						border-right: none !important;
+					}
+					> li:nth-child(2n+1) {
+						clear: both;
+					}
+				}
+				&.columns-3 > ul.sub-menu {
+					> li { width: 32.8%; }
+					> li:nth-child(3n) {
+						border-right: none !important;
+					}
+					> li:nth-child(3n+1) {
+						clear: both;
+					}
+				}
+				&.columns-4 > ul.sub-menu {
+					> li { width: 24.45%; }
+					> li:nth-child(4n) {
+						border-right: none !important;
+					}
+					> li:nth-child(4n+1) {
+						clear: both;
+					}
+				}
+				&.columns-5 > ul.sub-menu {
+					> li { width: 19.45%; }
+					> li:nth-child(5n) {
+						border-right: none !important;
+					}
+					> li:nth-child(5n+1) {
+						clear: both;
+					}
+				}
+				&.columns-6 > ul.sub-menu {
+					> li { width: 16.1%; }
+					> li:nth-child(6n) {
+						border-right: none !important;
+					}
+					> li:nth-child(6n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+
+		// .navbar-fixed-left & {
+		// 	> li {
+		// 		ul.sub-menu {
+		// 			box-shadow: @submenu-right-default-box-shadow;
+		// 		}
+		// 	}
+		// }
+
+		// .navbar-fixed-right & {
+		// 	> li {
+		// 		ul.sub-menu {
+		// 			box-shadow: @submenu-left-default-box-shadow;
+		// 		}
+		// 	}
+		// }
+	}
+}
+
+// Component alignment
+//
+// Repurpose the pull utilities as their own navbar utilities to avoid specificity
+// issues with parents and chaining. Only do this when the navbar is uncollapsed
+// though so that navbar contents properly stack and align in mobile.
+
+// @media (min-width: @navbar-float-breakpoint) {
+// 	.navbar-left  { .pull-left(); }
+// 	.navbar-right { .pull-right(); }
+// }
+
+.navbar-toggle {
+	//	color: @navbar-default-toggle-hover-color;
+	// background-color: @navbar-default-toggle-hover-bg;
+	
+	&.collapsed {
+		color: @navbar-default-toggle-color;
+		&:hover {
+			color: @navbar-default-toggle-hover-color;
+			// background-color: @navbar-default-toggle-hover-bg;
+		}
+	}
+}
+
+.noo-navbar {
+	display: inline-block; 
+	width: 100%;
+}
+
+
+// Floating Header
+@media (min-width: @grid-float-breakpoint) {
+	body.page-menu-transparent {
+		// Floating NavBar
+		.noo-header {
+			position: absolute;
+			width: 100%;
+			z-index: @zindex-navbar;
+			background-color: rgba(0,0,0,0.1);
+			&.has-border {
+				// border-bottom: 1px solid rgba(255,255,255,0.25);
+			}
+			.navbar-wrapper {
+				background-color: rgba(0,0,0,0.18);
+			}
+		}
+
+		.navbar:not(.navbar-fixed-top) {
+			margin-right: auto;
+			margin-left: auto;
+			box-shadow: none;
+			.navbar-nav > li > a {
+				color: #ffffff;
+
+				&:hover {
+					color: @nav-link-hover-color;
+				}
+				@media (max-width: @grid-float-breakpoint) {
+					color: @text-color;
+					//background: #fff;
+				}
+			}
+
+			.navbar-brand {
+				.noo-logo-normal {
+					display: none;
+				}
+				.noo-logo-floating {
+					display: block;
+				}
+
+				// @media only screen and (-moz-min-device-pixel-ratio: 1.5),
+				// only screen and (-o-min-device-pixel-ratio: 3/2),
+				// only screen and (-webkit-min-device-pixel-ratio: 1.5),
+				// only screen and (min-device-pixel-ratio: 1.5),
+				// only screen and (min-resolution: 144dpi) {
+				// 	.noo-logo-retina-img {
+				// 		display: none;
+				// 	}
+				// }
+			}
+		}
+
+		.noo-page-heading.noo-page-heading-bg > div:first-child {
+			margin-top: @navbar-height;
+		}
+	}
+	.page-menu-transparent{
+		.noo-topbar{
+			border-color: transparent;
+			background-color: rgba(0, 0, 0, 0.1);
+			.topbar-right .searchform .searchinput{
+				background: transparent;
+			}
+		}
+		.navbar:not(.navbar-fixed-top){
+			background: transparent;
+			border-color: transparent;
+			color: #fff;
+		}
+	}
+}

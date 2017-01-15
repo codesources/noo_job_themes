@@ -1,0 +1,21 @@
+/* Post List */
+.widefat .column-featured,
+.widefat .column-viewable {
+	width: 8%;
+	text-align: center;
+}
+.widefat .column-candidate_id,
+.widefat .column-job_category,
+.widefat .column-job_location {
+	width: 12%;
+}
+a.delete-pluploaded {
+	display: inline-block;
+	color: #f00;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.viewable .dashicons-hidden {
+	color: #555;
+}

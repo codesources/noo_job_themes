@@ -1,0 +1,56 @@
+/**
+ * 9.0 - Main file
+ * 	9.4 - single
+ */
+
+.single-sidebar{
+	padding: @grid-gutter-width;
+	background: #fff;
+	margin-bottom: @grid-gutter-width;
+	iframe{
+		width: 100%;
+		height: auto;
+	}
+}
+.content-summary{
+	padding: @grid-gutter-width;
+	margin-top: @grid-gutter-width;
+	border:1px solid @border-color-base;
+	background: @background-color-base;
+	margin-bottom: @grid-gutter-width;
+	@media (max-width: @screen-xs-max) {
+		padding: (@grid-gutter-width / 2);
+	}
+}
+
+// .single-noo_job,
+// .single-noo_company,
+// .page-template-page-post-job {
+	.job-desc,
+	.more-jobs,
+	.company-custom-fields {
+		ul {
+			list-style: none;
+			padding-left: 0;
+			position: relative;
+			li {
+				line-height: 2.25em;
+				padding-left: 20px;
+				&:before {
+					font-family: FontAwesome;
+					content: "\f058";
+					position: absolute;
+					color: @brand-primary;
+					margin-left: -20px;
+				}
+			}
+		}
+		ol {
+			li {
+				line-height: 2.25em;	
+			}
+		}
+	}
+	
+// }
+//--=

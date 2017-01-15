@@ -1,0 +1,506 @@
+/**
+ * 5.0 - Additional Element
+ *  5.7 - accordion-tab
+ */
+
+
+// Base class
+// --------------------------------------------------
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  &:extend(.clearfix all);
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: @nav-link-padding;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: @nav-link-hover-bg;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      color: @nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: @nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: @nav-link-hover-bg;
+      border-color: @link-color;
+    }
+  }
+
+  // Nav dividers (deprecated with v3.0.1)
+  //
+  // This should have been removed in v3 with the dropping of `.nav-list`, but
+  // we missed it. We don't currently support this anywhere, but in the interest
+  // of maintaining backward compatibility in case you use it, it's deprecated.
+  .nav-divider {
+    .nav-divider();
+  }
+
+  // Prevent IE8 from misplacing imgs
+  //
+  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+  > li > a > img {
+    max-width: none;
+  }
+}
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+  border-bottom: 1px solid @nav-tabs-border-color;
+  margin-bottom: (@grid-gutter-width / 2);
+  > li {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -1px;
+
+    // Actual tabs (as links)
+    > a {
+      margin-right: 2px;
+      line-height: @line-height-base;
+      border: 1px solid transparent;
+      border-radius: @border-radius-base @border-radius-base 0 0;
+      background: @background-color-base;
+      font-weight: bold;
+      font-family: @headings-font-family;
+      &:hover {
+        border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @nav-tabs-active-link-hover-color;
+        background-color: @nav-tabs-active-link-hover-bg;
+        border: 1px solid @nav-tabs-active-link-hover-border-color;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+    &.active > a {
+      background:@headings-color !important;
+      color: #fff !important;
+     }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    .nav-justified();
+    .nav-tabs-justified();
+  }
+}
+
+.tab-control-right{
+  .nav-tabs > li{
+    float: right;
+  }
+}
+
+// Pills
+// -------------------------
+.nav-pills {
+  > li {
+    float: left;
+
+    // Links rendered as pills
+    > a {
+      border-radius: @nav-pills-border-radius;
+    }
+    + li {
+      margin-left: 2px;
+    }
+
+    // Active state
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @nav-pills-active-link-hover-color;
+        background-color: @nav-pills-active-link-hover-bg;
+      }
+    }
+  }
+}
+
+
+// Stacked pills
+.nav-stacked {
+  > li {
+    float: none;
+    + li {
+      margin-top: 2px;
+      margin-left: 0; // no need for this gap between nav items
+    }
+  }
+}
+
+
+// Nav variations
+// --------------------------------------------------
+
+// Justified nav links
+// -------------------------
+
+.nav-justified {
+  width: 100%;
+
+  > li {
+    float: none;
+    > a {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > li {
+      display: table-cell;
+      width: 1%;
+      > a {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Move borders to anchors instead of bottom of list
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+    border-radius: @border-radius-base;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid @nav-tabs-justified-link-border-color;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > li > a {
+      border-bottom: 1px solid @nav-tabs-justified-link-border-color;
+      border-radius: @border-radius-base @border-radius-base 0 0;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border-bottom-color: @nav-tabs-justified-active-link-border-color;
+    }
+  }
+}
+
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+// Dropdowns
+// -------------------------
+
+// Specific dropdowns
+.nav-tabs .dropdown-menu {
+  // make dropdown border overlap tab border
+  margin-top: -1px;
+  // Remove the top rounded corners here since there is a hard edge above the menu
+  .border-top-radius(0);
+}
+
+
+.noo-vc-accordion.panel-group{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  .panel {
+    .border-radius(0px);
+    border: none;
+    .box-shadow(0 0 0 rgba(0, 0, 0, 0));
+    background: @accordion-bg;
+  }
+  .panel + .panel{
+     margin-top: 2px;
+  }
+  .panel-heading {
+    padding: 10px;
+    background-color: @accordion-heading-bg;
+    border: 1px solid @accordion-heading-bg;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    color: @accordion-heading-color;
+    &:hover,
+    &.active {
+      background-color: @accordion-heading-bg-active;
+      border-color: @accordion-heading-bg-active;
+      .panel-title {
+        background-color: @accordion-heading-bg-active;
+        color: @accordion-heading-active-color;
+      }
+      &:hover {
+        background-color: @accordion-heading-bg-active;
+        border-color: @accordion-heading-bg-active;
+      }
+      a{
+        color: @accordion-heading-active-color;
+      }
+    }
+    &:hover {
+      //background-color: @accordion-heading-bg-hover;
+      //border: 1px solid @accordion-heading-bg-hover;
+    }
+  }
+  .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: @accordion-heading-color;
+    font-size: @font-size-large;
+    > a {
+      color: @accordion-heading-color;
+      line-height: @line-height-base;
+      display: block !important;
+    }
+  }
+
+
+  // Panel contents
+  .panel-body {
+    padding: @accordion-body-padding;
+    border-style: solid;
+    border-color: @accordion-heading-bg;
+    border-width: 0 1px 1px !important;
+  }
+
+}
+
+.noo-vc-accordion {
+    .panel-heading.active .panel-title a {
+      color: @accordion-heading-active-color;
+    }
+    .panel-title a {
+      &:before {
+        &:extend(.fa);
+        margin-left: ((10px / @font-size-root) + @font-unit);
+        margin-right: ((20px / @font-size-root) + @font-unit);
+
+      }
+  }
+}
+// icon style dark circe
+.noo-vc-accordion.icon-dark_circe {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f056",0, 1);
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f055",0, 1);
+  }
+}
+// icon style icon-light_square
+.noo-vc-accordion.icon-light_square {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f147",0, 1);
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f196",0, 1);
+  }
+}
+// icon style icon-dark_square
+.noo-vc-accordion.icon-dark_square {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f146",0, 1);
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f0fe",0, 1);
+  }
+}
+// icon style icon-simple
+.noo-vc-accordion.icon-simple {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f068",0, 1);
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f067",0, 1);
+  }
+}
+// icon style icon-left_arrow
+.noo-vc-accordion.icon-left_arrow {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f106",0, 1);
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f107",0, 1);
+  }
+}
+// icon style icon-right_arrow
+.noo-vc-accordion.icon-right_arrow {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f106",0, 1);
+  }
+  .panel-heading {
+    position: relative;
+  }
+  .panel-heading .panel-title a {
+    padding-left: 15px;   
+    .add-icon-before("\f107",0, 1);
+    &:before {
+      float: right;
+      position: absolute !important;
+      top: 30%;
+      right: 0px;
+    }
+  }
+}
+// icon style icon-light_circe
+.noo-vc-accordion.icon-light_circe {
+  .panel-heading.active .panel-title a {
+    .add-icon-before("\f056",0, 1);
+
+  }
+  .panel-heading .panel-title a {
+    .add-icon-before("\f055",0, 1);
+  }
+}
+
+/*
+ *    Tab Shortcode
+ */
+
+ // .noo-tabs {
+ //  margin-top: 50px;
+ //  margin-bottom: 50px;
+ //  width: 100%;
+ //  .nav > li > a {
+ //    background-color: @tab-link-normal-bg;
+ //    i[class^='fa'] {
+ //      margin-right: 10px !important;
+ //    }
+ //  }
+ // }
+// Tabs left
+
+.tabs-left > .nav-tabs {
+  float: left;
+  width: 22.5%;
+  @media (max-width: @screen-sm-min) {
+    float: none;
+    width: 100% !important;
+    }
+  > li {
+    float: none;
+    border: none;
+    min-width: 100%;
+    margin-bottom: 0;
+    &:hover {
+        color: @nav-link-hover-bg;
+
+    }
+
+    // &.active {
+    //  > a {
+    //    background-color: @tab-link-active-bg;
+    //    color: #fff;
+    //  }
+    // }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: @tab-link-active-bg;
+        border: 1px solid @nav-tabs-active-link-hover-border-color;
+        border-top-color: @nav-tabs-active-link-hover-border-color;
+        border-right-color: transparent;
+        cursor: default;
+        border-width: 1px 0 1px 1px;
+        @media (max-width: @grid-float-breakpoint-max) {
+          border-right: 1px solid @nav-tabs-active-link-hover-border-color;
+          margin-right: 0px;
+        }
+      }
+    }
+    > a {
+      border-width: 1px 0 1px 1px;
+      margin-right: -1px;
+      margin-bottom: 2px;
+      padding: @padding-large-vertical 0;
+      border: 1px solid @nav-tabs-active-link-hover-border-color;
+      border-right-color: transparent;
+      text-align: left;
+      @media (max-width: @grid-float-breakpoint-max) {
+        border-right: 1px solid @nav-tabs-active-link-hover-border-color;
+        margin-right: 0px;
+      }
+      font-size: @font-size-large;
+      padding-left: 30px;
+      background-color: @tab-link-normal-bg;
+      &:hover {
+        color: @tab-link-hover-bg;
+        background-color: @tab-link-normal-bg;
+        border: 1px solid @nav-tabs-active-link-hover-border-color;
+        border-right-color: transparent;
+      }
+      > i {
+        padding-right: 6px;
+      }
+    }   
+  }
+}
+.tabs-left .tab-content {     
+  min-height: 212px;
+  float: right;
+  width: 77.5%;
+  @media (max-width: @screen-sm-min) {
+    float:none;
+    width: 100%;
+  }
+  .tab-pane.active {
+    padding: 26px 30px;
+  }
+}

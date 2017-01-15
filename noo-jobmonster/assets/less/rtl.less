@@ -1,0 +1,486 @@
+@import "variables.less";
+
+body, p, span, a, label,
+h1, h2, h3, h4, h5, h6,
+input,
+input[placeholder], [placeholder], *[placeholder],
+input[type="text"], [type="text"], *[type="text"],
+[data-placeholder],
+li, ul,
+textarea,
+table, thead, tr, th {
+	direction: rtl;
+	unicode-bidi:embed;
+}
+
+// -- [ Heading ] -- //
+	.navbar-nav li.menu-item-post-btn{
+		margin: 0 18px 0 0;
+	}
+	.nav-item-member-profile {
+		&.login-link {
+			margin-right: 30px;
+			margin-left: 0;
+			padding-right: 30px;
+			padding-left: 0;
+			&:before {
+			    right: 0;
+			}
+			> a {
+				padding-left: 18px;
+				padding-right: 0;
+			}
+		}
+	}
+	.navbar-brand {
+		float: right;
+	}
+	.navbar-toggle {
+		float: 	left;
+	}
+	@media (min-width: 992px) {
+		.navbar-header {
+		    float: right;
+		}
+	}
+	h1.page-title {
+		// float: right;
+	}
+
+	.navbar-nav {
+		ul.sub-menu {
+			li {
+
+			}
+		}
+	}
+	@media (min-width: 992px) {
+		.navbar-nav {
+		    // margin-top: 15px;
+		}
+	}
+
+
+// -- [ Tab Visual ] -- //
+	.tab-control-right {
+		.nav-tabs {
+			> li {
+				float: 	left;
+			}
+		}
+	}
+	
+	.loop-item-wrap {
+		.item-featured,
+		.loop-item-content {
+			float: 	right !important;
+		}
+		.show-view-more {
+			float: 	left;
+		}
+	}	
+	.content-meta > span i {
+	    padding-left: 5px;
+	    padding-right: none;
+	}
+
+// -- [ Page woocommerce ] -- //
+	.woocommerce-page {
+		.page-heading-info {
+			float: right;
+		}
+	}
+	.woocommerce {
+		#payment {
+			ul.payment_methods {
+				li {
+					text-align: right;
+				}
+			}
+			#place_order {
+				float: left;
+			}
+		}
+		th {
+			float: right;
+		}
+	}
+
+
+// -- [ Bootstrap ] -- //
+	.form-group {
+		// .row {
+			.control-label {
+				float: right;
+			}
+		// }
+		.checkbox {
+			float: right;
+		}
+	}
+	@media (min-width: 768px) {
+		.col-sm-1, 
+		.col-sm-2, 
+		.col-sm-3, 
+		.col-sm-4, 
+		.col-sm-5, 
+		.col-sm-6, 
+		.col-sm-7, 
+		.col-sm-8, 
+		.col-sm-9, 
+		.col-sm-10, 
+		.col-sm-11, 
+		.col-sm-12 {
+		    float: right;
+		}
+	}
+	@media (min-width: 992px){
+		.col-md-1, 
+		.col-md-2, 
+		.col-md-3, 
+		.col-md-4, 
+		.col-md-5, 
+		.col-md-6, 
+		.col-md-7,
+		 .col-md-8, 
+		 .col-md-9, 
+		 .col-md-10, 
+		 .col-md-11, 
+		 .col-md-12 {
+		    float: right;
+		}
+	}
+	.chosen-choices li.search-field {
+		float: right;
+		clear: both;
+	}
+	.col-xs-1, 
+	.col-xs-2, 
+	.col-xs-3, 
+	.col-xs-4, 
+	.col-xs-5, 
+	.col-xs-6, 
+	.col-xs-7, 
+	.col-xs-8, 
+	.col-xs-9, 
+	.col-xs-10, 
+	.col-xs-11, 
+	.col-xs-12 {
+		float: right
+	}
+	// @media (min-width: 768px){
+	// 	.col-sm-offset-3 {
+	// 	   margin-left: 0;
+	// 	   margin-right: 25%;
+	// 	}
+	// }
+
+// -- [ table ] -- //
+	table {
+		thead {
+			tr {
+				th {
+					text-align: right;
+				}
+			}
+		}
+	}
+	.pagination {
+		text-align: left;
+	}
+
+// -- [ Widget ] -- //
+	.widget {
+		ul, ol {
+			li {
+				a {
+					float: none;
+				}
+			}
+		}
+	}
+	.noo-job-type-widget {
+		ul, ol {
+			li {
+				a {
+					padding-right: 	20px;
+				}
+			}
+		}
+	}
+	.noo-job-search-widget,
+	.noo-resume-search-widget, 
+	.widget_search {
+		form {
+			&:before {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+
+// -- [ Single ] -- //
+
+	.single-noo_job {
+		.page-heading-info,
+		.page-sub-heading-info {
+			float: right;
+			clear: both;
+		}
+		.page-sub-heading-info {
+
+		}
+		.job-desc, .single-noo_job .more-jobs {
+			ul {
+				li {
+					&:before {
+						margin-right: -20px;
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	.wysihtml5-toolbar {
+		float: 	right;
+	}
+	.resume-candidate-profile  {
+		.candidate-title {
+			h2 {
+				float: right;
+			}
+		}
+	}
+	.resume { 
+		.resume-content {
+			.resume-desc {
+				.resume-timeline {
+					.timeline-container {
+						.timeline-wrapper {
+							.timeline-time {
+								float: right;
+								&:before {
+								    right: -22px;
+								    left: auto;
+								}
+							}
+							.timeline-series {
+								&:before {
+									right: -25px;
+									left: auto;
+									border-width: 0 0px 27px 25px;
+								}
+								&:after {
+									top: 41px;
+								    right: -28px;
+								    left: auto;
+								    border-width: 0 2px 24px 26px;
+								}
+							}
+						}
+					}
+				}
+				.resume-general {
+					ul {
+						li {
+							span {
+								float: right;
+							}
+						}
+					}
+				}
+			}
+		}
+		.skill { 
+			.pregress-bar {
+				.progress_title {
+					float: 	right;
+				}
+			}
+			.pregress-bar {
+				.progress {
+					float: 	right;
+				}
+			}
+		}
+	}
+	.content-footer {
+		.author-bio {
+			.author-avatar {
+				float: right;
+			}
+			.author-info {
+				margin-left: auto;
+				margin-right: 100px;
+				.author-social {
+					> div {
+						float: right;
+					}
+				}
+			}
+		}
+	}
+
+	.content-share {
+		.noo-social {
+			a {
+				i {
+					float: right;
+				}
+			}
+		}
+	}
+
+
+// -- [ Upload ] -- //
+	.form-group .control-label {
+		// float: right !i
+	}
+	.form-control-flat {
+		text-align: right;
+		.form-control-file-button {
+			right: auto;
+			left: 4px;
+			top: 41px;
+		}
+		> .radio , > .checkbox {
+			padding: 0 30px 0 0;
+			i {
+				right: 0;
+			    left: auto;
+			}
+			input {
+				left: auto;
+				right: -9999px;
+			}
+		}
+	}
+
+// -- [ Step ] -- //
+	.jsteps, .noo-step-icon {
+		li {
+			float: right;
+			&:first-child {
+				.jstep-num, .noo-step-icon-item {
+					&:before {
+						right: auto;
+						left: 0;
+					}
+				}
+			}
+			
+			&:last-child { 
+				.jstep-num, .noo-step-icon-item{
+					&:before {
+					    right: 0;
+					    left: auto;
+					}
+			    }
+			}
+			.noo-step-icon-item {
+				&:before {
+					left: auto;
+					right: 0;
+				}
+				&:after {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+
+// -- [ Member ] -- //
+	.member-heading {
+		.member-heading-nav {
+			ul {
+				li {
+					float: right;
+				}
+			}
+		}
+	}
+	.member-manage {
+		.member-manage-table {
+		    overflow: hidden;
+		}
+	}
+
+// ===== <<< [ Login Form ] >>> ===== //
+// @media (min-width: 768px) {
+// 	.login-socical {
+
+// 		.col-sm-offset-3 {
+// 		    margin-right: 0;
+// 		}
+
+// 	}
+// }
+
+/* Fix bug with Google authentication iFrame */
+#ssIFrame_google {
+	left: initial !important;
+	right: -9999px !important;
+}
+
+.noo-rtl {
+	.fa-long-arrow-right {
+		&:before {
+			content: "\f177";
+		}
+	}
+	.fa-long-arrow-left {
+		&:before {
+			content: "\f178";
+		}
+	}
+}
+
+/**
+ * Fix slider
+ */
+.job-search-bg-slider{
+	ul.sliders{
+		right: 0px !important;
+	    left: auto !important;
+	}
+}
+
+/**
+ * Style child item
+ */
+.widget {
+	ul {
+		li {
+			text-align: left;
+			a {
+				float: right;
+				text-align: right;
+				width: 85%;
+			}
+			ul.children {
+				padding: 0 25px 0 0;
+			}
+		}
+	}
+}
+
+.button_socical,
+.nav-item-member-profile .login-socical .button_socical {
+	text-align: right;
+}
+.button_socical i {
+	border-radius: 0 5px 5px 0;
+}
+
+.rtl {
+	.timeline-event {
+		> a {
+			&:after {
+				left: @grid-gutter-width;
+				right: auto;
+			}
+		}
+	}
+}

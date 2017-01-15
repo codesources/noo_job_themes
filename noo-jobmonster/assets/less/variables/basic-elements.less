@@ -1,0 +1,343 @@
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+@table-cell-padding:            ((8px / @font-size-root) + @font-unit);
+//** Padding for cells in `.table-condensed`.
+@table-condensed-cell-padding:  ((5px / @font-size-root) + @font-unit);
+
+//** Default background color used for all tables.
+@table-bg:                      transparent;
+//** Background color used for `.table-striped`.
+@table-bg-accent:               #f9f9f9;
+//** Background color used for `.table-hover`.
+@table-bg-hover:                #f5f5f5;
+@table-bg-active:               @table-bg-hover;
+
+//** Border color for table and cell borders.
+@table-border-color:            @border-color-base;
+
+@table-head-bg-color:           @link-color;
+@table-head-hover-bg-color:     lighten(@link-color, 6%);
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+@input-bg:                       #fff;
+//** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+//** Text color for `<input>`s
+@input-color:                    @gray;
+//** `<input>` border color
+@input-border:                   @border-color-base;
+//** `<input>` border radius
+@input-border-radius:            @border-radius-base;
+//** Border color for inputs on focus
+@input-border-focus:             #66afe9;
+
+//** Placeholder text color
+@input-color-placeholder:        @text-secondary-color;
+
+
+//** Default `.form-control` height
+@input-height-base: 50px;
+//** Large `.form-control` height
+@input-height-large: 60px;
+//** Small `.form-control` height
+@input-height-small: 30px;
+
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+//** Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+@input-border-focus: lighten( @link-color, 10% );
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-font-weight:                normal;
+
+@btn-default-color:              @text-color;
+@btn-default-bg:                 #ebeeef;
+@btn-default-border:             #ebeeef;
+
+//@btn-primary-color:              @headings-color;
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+// @btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-border:            transparent;
+
+@btn-success-color:              @headings-color;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 5%);
+
+@btn-info-color:                 @headings-color;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@btn-info-bg, 5%);
+
+@btn-warning-color:              @headings-color;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               @headings-color;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-link-disabled-color:        @gray-light;
+
+@btn-font-weight:                400;
+
+@btn-secondary-color:            #bdb254;
+@btn-secondary-bg:               #f0e797;
+@btn-secondary-border:           #f0e797;
+@btn-secondary-bg-hover: 		 @brand-primary;
+@btn-secondary-border-hover: 	 @brand-primary;
+@btn-secondary-color-hover: 	 #fff;
+
+@btn-thirdary-bg-hover: 		 #e8df8b;
+@btn-thirdary-border-hover:		 #e8df8b;
+
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+@thumbnail-padding:           ((4px / @font-size-root) + @font-unit);;
+//** Thumbnail background color
+@thumbnail-bg:                @body-bg;
+//** Thumbnail border color
+@thumbnail-border:            #ddd;
+//** Thumbnail border radius
+@thumbnail-border-radius:     @border-radius-base;
+
+//** Custom text color for thumbnail captions
+@thumbnail-caption-color:     @text-color;
+//** Padding around the thumbnail caption
+@thumbnail-caption-padding:   ((9px / @font-size-root) + @font-unit);;
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+@dropdown-bg:                    #fff;
+//** Dropdown menu `border-color`.
+@dropdown-border:                rgba(0,0,0,.15);
+//** Dropdown menu `border-color` **for IE8**.
+@dropdown-fallback-border:       #ccc;
+//** Divider color for between dropdown items.
+@dropdown-divider-bg:            #e5e5e5;
+
+//** Dropdown link text color.
+@dropdown-link-color:            @gray-dark;
+//** Hover color for dropdown links.
+@dropdown-link-hover-color:      darken(@gray-dark, 5%);
+//** Hover background for dropdown links.
+@dropdown-link-hover-bg:         #f5f5f5;
+
+//** Active dropdown menu item text color.
+@dropdown-link-active-color:     @component-active-color;
+//** Active dropdown menu item background color.
+@dropdown-link-active-bg:        @component-active-bg;
+
+//** Disabled dropdown menu item background color.
+@dropdown-link-disabled-color:   @gray-light;
+
+//** Text color for headers within dropdown menus.
+@dropdown-header-color:          @gray-light;
+
+//** Deprecated `@dropdown-caret-color` as of v3.1.0
+@dropdown-caret-color:           #000;
+
+//Top bar
+@topbar-height:40px;
+@topbar-bg:#2e2e2e;
+//@topbar-border-color:#2e2e2e;
+@topbar-border-color:#f0f0f0;
+@topbar-color:#999;
+@topbar-link-color:@topbar-color;
+@topbar-link-hover-color:#fff;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+@navbar-height:                    70px;
+@navbar-line-height:               1.2;
+@navbar-margin-bottom:             @navbar-line-height; //TODO: remove
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        0px; //TODO: remove
+@navbar-padding-vertical:          ((@navbar-height - @navbar-font-size) / 2); //TODO: remove
+@navbar-collapse-max-height:       340px; //TODO: change value
+
+@navbar-default-color:             #2e2e2e;
+@navbar-default-bg:                white;
+@navbar-default-border:            #f2f2f2;
+
+// Navbar links
+@navbar-default-link-color:                #2e2e2e;
+@navbar-default-link-hover-color:          @link-hover-color;
+@navbar-default-link-hover-bg:             rgba(0, 0, 0, 0);
+@navbar-default-link-active-color:         @link-color;
+@navbar-default-link-active-bg:            @navbar-default-link-hover-bg;
+@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-disabled-bg:          @navbar-default-link-hover-bg;
+
+// //== Navbar
+@navbar-font-size: 14px;
+@navbar-link-padding: @nav-link-padding;
+@navbar-uppercase: false;
+
+@navbar-fixed-bg:#fff;
+
+@navbar-shrink-height: 45px; // shrink half the padding.
+@navbar-shrink-padding-top: 15px;
+@navbar-shrink-padding-bottom: 15px;
+
+@navbar-default-bg: #ffffff;
+@navbar-box-shadow-color: rgba(0, 0, 0, 0.135);
+@navbar-default-box-shadow: none;//0 2px 4px 0 @navbar-box-shadow-color;
+@left-navbar-default-box-shadow: 2px 0 4px 0 @navbar-box-shadow-color;
+@right-navbar-default-box-shadow: -2px 0 4px 0 @navbar-box-shadow-color;
+
+// Navbar brand label @TODO: remove
+@navbar-default-brand-color:               @navbar-default-link-color;
+@navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 10%);
+@navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg:           #ddd;
+@navbar-default-toggle-icon-bar-bg:        #888;
+@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-color:              @navbar-default-color;
+@navbar-default-toggle-hover-color:        darken(@navbar-default-toggle-color, 15%);
+
+@navbar-toggle-size:                       25px;
+@navbar-toggle-margin-top:                 30px; 
+
+
+// NavBar fixed on the side
+@navbar-side-width: 240px;
+@side-logo-margin-top: 30px;
+@side-navbar-link-height: 50px;
+@side-navbar-link-padding-vertical: ( ( @side-navbar-link-height - @navbar-line-height ) / 2 );
+
+// Submenu
+@submenu-font-size: @navbar-font-size;
+@submenu-offset-top: 10px;
+@submenu-offset-horizontal: 95%;
+@submenu-default-bg: @navbar-default-bg;
+@submenu-left-default-box-shadow: 2px 2px 6px rgba(0,0,0,.2);;
+@submenu-right-default-box-shadow: @right-navbar-default-box-shadow;
+
+@navbar-sub-default-link-color:         @navbar-default-link-color;
+@navbar-sub-default-link-hover-color:    @navbar-default-link-hover-color;
+@navbar-sub-default-link-hover-bg:      #f5f5f5;
+
+// Logo
+@logo-font-color: @headings-color;
+@logo-font-family: @font-family-base;
+@logo-font-weight: 700;
+@logo-font-style: normal;
+@logo-font-size: 30px;
+@logo-line-height: 1;
+@logo-uppercase: true;
+
+@logo-image-height: @logo-font-size;
+@logo-padding-vertical: ((@navbar-height - @logo-font-size) / 2);
+
+@logo-shrink-padding-top: ((@navbar-shrink-height - @logo-font-size) / 2);
+@logo-shrink-padding-bottom: (@navbar-shrink-height - @logo-font-size - @logo-shrink-padding-top);
+
+@logo-padding-horizontal: 0px; //TODO: remove
+
+
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+@modal-inner-padding:         30px;
+
+//** Padding applied to the modal title
+@modal-title-padding:         15px;
+//** Modal title line-height
+@modal-title-line-height:     @line-height-base;
+
+//** Background color of modal content area
+@modal-content-bg:                             #fff;
+//** Modal content border color
+@modal-content-border-color:                   rgba(0,0,0,.2);
+//** Modal content border color **for IE8**
+@modal-content-fallback-border-color:          #999;
+
+//** Modal backdrop background color
+@modal-backdrop-bg:           #000;
+//** Modal backdrop opacity
+@modal-backdrop-opacity:      .5;
+//** Modal header border color
+@modal-header-border-color:   #e5e5e5;
+//** Modal footer border color
+@modal-footer-border-color:   @modal-header-border-color;
+
+@modal-lg:                    900px;
+@modal-md:                    700px;
+@modal-sm:                    300px;
+
+
+//== Carousel
+//
+//##
+
+@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+
+@carousel-control-color:                      #fff;
+@carousel-control-width:                      15%;
+@carousel-control-opacity:                    .5;
+@carousel-control-font-size:                  20px;
+
+@carousel-indicator-active-bg:                #fff;
+@carousel-indicator-border-color:             #fff;
+
+@carousel-caption-color:                      #fff;
+
+//== Close
+//
+//##
+
+@close-font-weight:           bold;
+@close-color:                 #000;
+@close-text-shadow:           0 1px 0 #fff;
+
+
+//Footer widget
+@footer-widget-title:#fff;
+@footer-widget-bg:#44494b;
+@footer-widget-color:#767676;;
+@footer-widget-link-color:@footer-widget-color;
+@footer-widget-color-border:rgba(255, 255, 255, 0.05);
+@footer-widget-padding:0;
+
+//Footer
+@footer-bg:#3f4547;//#1b1b1b;
+@footer-color:#767676;//#555;
+@footer-link-color:@footer-color;
+@footer-link-hover-color:@link-hover-color;
+@footer-color-border:rgba(255, 255, 255, 0.2);
+@footer-nav-color:@footer-color;
